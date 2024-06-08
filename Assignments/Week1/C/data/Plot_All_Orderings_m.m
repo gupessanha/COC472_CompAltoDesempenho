@@ -66,7 +66,7 @@ plot( data(:,1), data(:,5), 'DisplayName', 'IJP', 'MarkerSize', 8, 'LineWidth', 
       'Marker', 'o', 'LineStyle', '-.', 'Color', plot_colors( 2,: ) );
 
 % Plot time data for IPJ  (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 ) 
   output_IPJ   
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -75,7 +75,7 @@ if ( 0 )
 end
 
 % Plot time data for JIP  (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 ) 
   output_JIP   
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -84,7 +84,7 @@ if ( 0 )
 end
 
 % Plot time data for JPI  (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 ) 
   output_JPI   
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -102,7 +102,7 @@ if ( 1 )
 end
 
 % Plot time data for PJI  (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 ) 
   output_PJI   
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
