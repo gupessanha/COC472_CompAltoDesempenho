@@ -13,9 +13,9 @@ void Gemm_MRxNRKernel( int, double *, int, double *, int,
 void Gemm_JI_MRxNRKernel( int, int, int, double *, int, double *, int,
 		        double *, int );
 
-#define MC 96
-#define NC 96
-#define KC 96
+#define MC 288
+#define NC 288
+#define KC 288
 
 void MyGemm( int m, int n, int k, double *A, int ldA,
 	     double *B, int ldB, double *C, int ldC )

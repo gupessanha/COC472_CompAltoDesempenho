@@ -1,7 +1,7 @@
-%% Performance of naive blocked matrix-matrix multiplication
+    %% Performance of naive blocked matrix-matrix multiplication
 % This Live Script helps you explore how to block for  caches.
-% 
-% You will want to activate the plotting of a new performance curve by changing 
+%
+% You will want to activate the plotting of a new performance curve by changing
 % "( 0 )" to "( 1 )" in the appropriate place.
 
 % load plot colors
@@ -10,7 +10,7 @@ my_plot_colors;
 % Create figure
 figure1 = figure('Name','GFLOPS');
 
-% Create axes, labels, legends.  In future routines for plotting performance, 
+% Create axes, labels, legends.  In future routines for plotting performance,
 % the next few lines will be hidden in the script.
 axes2 = axes('Parent',figure1);
 hold(axes2,'on');
@@ -30,7 +30,7 @@ if ( 1 )
 end
 
 % Plot performance data for JI_4x4Kernel
-if ( 1 )
+if ( 0 )
   system( 'cp ../../../Week2/C/data/output_JI_4x4Kernel.m .' );
   output_JI_4x4Kernel   % load data
   assert( max(abs(data(:,6))) < 1.0e-10, ...
@@ -40,7 +40,7 @@ if ( 1 )
 end
 
 % Plot performance data for JI_12x4Kernel
-if ( 0 )
+if ( 1 )
   system( 'cp ../../../Week2/C/data/output_JI_12x4Kernel.m .' );
   output_JI_12x4Kernel   % load data
   assert( max(abs(data(:,6))) < 1.0e-10, ...
@@ -50,7 +50,7 @@ if ( 0 )
 end
 
 % Plot time data for IJP_JI_4x4Kernel (to plot change "0" to "1")
-if ( 0 ) 
+if ( 0 )
   output_IJP_JI_4x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -59,7 +59,7 @@ if ( 0 )
 end
 
 % Plot time data for IJP_JI_12x4Kernel  (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 )
   output_IJP_JI_12x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -68,7 +68,7 @@ if ( 0 )
 end
 
 % Plot time data for IPJ_JI_12x4Kernel (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 )
   output_IPJ_JI_12x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -77,7 +77,7 @@ if ( 0 )
 end
 
 % Plot time data for JIP_JI_12x4Kernel  (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 )
   output_JIP_JI_12x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -86,7 +86,7 @@ if ( 0 )
 end
 
 % Plot time data for JPI_JI_12x4Kernel  (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 )
   output_JPI_JI_12x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -95,8 +95,8 @@ if ( 0 )
 end
 
 % Plot time data for PIJ_JI_12x4Kernel  (to plot change "0" to "1")
-if ( 0 ) 
-  output_PIJ_JI_12x4Kernel 
+if ( 1 )
+  output_PIJ_JI_12x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
   plot( data(:,1), data(:,5), 'DisplayName', 'PIJ\_JI\_12x4Kernel ', 'MarkerSize', 8, 'LineWidth', 3, ...
@@ -104,8 +104,8 @@ if ( 0 )
 end
 
 % Plot time data for PJI_JI_12x4Kernel  (to plot change "0" to "1")
-if ( 0 ) 
-  output_PJI_JI_12x4Kernel 
+if ( 1 )
+  output_PJI_JI_12x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
   plot( data(:,1), data(:,5), 'DisplayName', 'PJI\_JI\_12x4Kernel ', 'MarkerSize', 8, 'LineWidth', 3, ...
@@ -129,7 +129,7 @@ if ( 0 )
     flops_per_cycle = 16;
     peak_gflops = turbo_clock_rate * flops_per_cycle;
 
-    axis( [ 0 v(2) 0 peak_gflops ] )  
+    axis( [ 0 v(2) 0 peak_gflops ] )
 end
 
 legend2 = legend( axes2, 'show' );
@@ -137,5 +137,5 @@ set( legend2, 'Location', 'southwest', 'FontSize', 14) ;
 
 % Uncomment if you want to create a pdf for the graph
 print( 'Plot_XYZ_JI_MRxNR.png', '-dpng' );
-%% 
+%%
 %%

@@ -1,7 +1,7 @@
 %% Performance after merging the "J" loops
 % This Live Script helps you further explore how to block for the L2 cache.
-% 
-% You will want to activate the plotting of a new performance curve by changing 
+%
+% You will want to activate the plotting of a new performance curve by changing
 % "( 0 )" to "( 1 )" in the appropriate place.
 
 % load plot colors
@@ -10,7 +10,7 @@ my_plot_colors;
 % Create figure
 figure1 = figure('Name','GFLOPS');
 
-% Create axes, labels, legends.  In future routines for plotting performance, 
+% Create axes, labels, legends.  In future routines for plotting performance,
 % the next few lines will be hidden in the script.
 axes2 = axes('Parent',figure1);
 hold(axes2,'on');
@@ -40,7 +40,7 @@ if ( 1 )
 end
 
 % Plot time data for IJP_JI_4x4Kernel (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 )
   output_IJP_JI_4x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -49,7 +49,7 @@ if ( 0 )
 end
 
 % Plot time data for PIJ_JI_12x4Kernel  (to plot change "0" to "1")
-if ( 1 ) 
+if ( 1 )
   output_PIJ_JI_12x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -58,7 +58,7 @@ if ( 1 )
 end
 
 % Plot time data for PI_JI_12x4Kernel (to plot change "0" to "1")
-if ( 1 ) 
+if ( 1 )
   output_PI_JI_12x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -67,7 +67,7 @@ if ( 1 )
 end
 
 % Plot time data for PI_JI_12x4Kernel_ldim  (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 )
   output_PI_JI_12x4Kernel_ldim
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -92,7 +92,7 @@ if ( 0 )
     flops_per_cycle = 16;
     peak_gflops = turbo_clock_rate * flops_per_cycle;
 
-    axis( [ 0 v(2) 0 peak_gflops ] )  
+    axis( [ 0 v(2) 0 peak_gflops ] )
 end
 
 legend2 = legend( axes2, 'show' );
@@ -100,5 +100,5 @@ set( legend2, 'Location', 'southwest', 'FontSize', 18) ;
 
 % Uncomment if you want to create a pdf for the graph
 print( 'Plot_XY_JI_MRxNRKernel.png', '-dpng' );
-%% 
+%%
 %%
