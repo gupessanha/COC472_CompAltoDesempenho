@@ -86,7 +86,7 @@ if ( 1 )
 end
 
 % Optionally show the reference implementation performance data
-if ( 0 )
+if ( 1 )
   plot( data(:,1), data(:,3), 'MarkerSize', 8, 'LineWidth', 1, ...
         'LineStyle', '-', 'DisplayName', 'Ref', 'Color', plot_colors( 1,: ) );
 end
@@ -96,8 +96,8 @@ v = axis;                   % extract the current ranges
 axis( [ 0 v(2) 0 v(4) ] )   % start the x axis and y axis at zero
 
 % Optionally change the top of the graph to capture the theoretical peak
-if ( 0 )
-    turbo_clock_rate = 4.3;
+if ( 1 )
+    turbo_clock_rate = 3.6;
     flops_per_cycle = 16;
     peak_gflops = turbo_clock_rate * flops_per_cycle;
 
@@ -109,4 +109,4 @@ set( legend2, 'Location', 'east', 'FontSize', 18) ;
 
 % Uncomment if you want to create a pdf for the graph
 print( 'Plot_All_Orderings.png', '-dpng' );
-%%
+%%  

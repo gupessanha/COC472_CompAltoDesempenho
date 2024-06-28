@@ -25,12 +25,14 @@ box(axes2,'on');
 set( axes2, 'FontName', 'Helvetica Neue', 'FontSize', 18);
 
 system( 'cp ../../../Week1/C/data/output_IJP.m .' );
-output_IJP   % load data for IJP ordering
-assert( max(abs(data(:,6))) < 1.0e-10, ...
-    'Hmmm, better check if there is an accuracy problem');
-plot( data(:,1), data(:,5), 'DisplayName', 'IJP', 'MarkerSize', 8, 'LineWidth', 2, ...
-    'Marker', 'o', 'LineStyle', '-.', 'Color', plot_colors( 2,: ) );
-  
+if ( 1 )
+    output_IJP   % load data for IJP ordering
+    assert( max(abs(data(:,6))) < 1.0e-10, ...
+        'Hmmm, better check if there is an accuracy problem');
+    plot( data(:,1), data(:,5), 'DisplayName', 'IJP', 'MarkerSize', 8, 'LineWidth', 2, ...
+        'Marker', 'o', 'LineStyle', '-.', 'Color', plot_colors( 2,: ) );
+end
+
 % Plot performance data for JPI
 if ( 1 )
   output_JPI   % load data for JPI ordering
@@ -50,7 +52,7 @@ if ( 1 )
 end
 
 % Plot time data for JI_P_Ger (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 ) 
   output_JI_P_Ger
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -59,7 +61,7 @@ if ( 0 )
 end
 
 % Plot time data for JI_4x4Kernel  (to plot change "0" to "1")
-if ( 0 ) 
+if ( 1 ) 
   output_JI_4x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -79,7 +81,7 @@ axis( [ 0 v(2) 0 v(4) ] )   % start the x axis and y axis at zero
 
 % Optionally change the top of the graph to capture the theoretical peak
 if ( 0 )
-    turbo_clock_rate = 4.3;
+    turbo_clock_rate = 3.5;
     flops_per_cycle = 16;
     peak_gflops = turbo_clock_rate * flops_per_cycle;
 

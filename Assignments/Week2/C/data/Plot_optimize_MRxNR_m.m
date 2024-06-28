@@ -32,7 +32,7 @@ plot( data(:,1), data(:,5), 'DisplayName', 'IJP', 'MarkerSize', 8, 'LineWidth', 
     'Marker', '.', 'LineStyle', '-.', 'Color', plot_colors( 2,: ) );
   
 % Plot performance data for JPI
-if ( 1 )
+if ( 0 )
   output_JPI   % load data for JPI ordering
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -59,7 +59,7 @@ if ( 0 )
 end
 
 % Plot time data for JI_4x4Kernel (to plot change "0" to "1")
-if ( 1 ) 
+if ( 0 ) 
   output_JI_4x4Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
@@ -68,7 +68,7 @@ if ( 1 )
 end
 
 % Plot time data for JI_4x6Kernel (to plot change "0" to "1")
-if ( 1 ) 
+if ( 0 ) 
   output_JI_4x6Kernel
   assert( max(abs(data(:,6))) < 1.0e-10, ...
       'Hmmm, better check if there is an accuracy problem');
